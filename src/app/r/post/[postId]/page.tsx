@@ -29,10 +29,10 @@ export default async function Page({ params }: IPageParams) {
         `post:${params.postId}`
     )) as CachedPost;
 
-    let post: (Post & { votes: Vote[]; author: User }) | null = null;
+    let post: (Post & { votes: Vote[]; author: User }) | null  = null;
 
     if (!cachedPost) {
-        post = db.post.findFirst({
+        post = await db.post.findFirst({
             where: {
                 id: params.postId,
             },
