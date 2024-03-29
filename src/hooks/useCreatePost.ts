@@ -10,7 +10,7 @@ import axios from "axios";
 export default function useCreatePost() {
     const result = useMutation({
         mutationFn: async (payload: postCreationRequest) => {
-            const { data } = await axios.post("/api/subreddit/post/create" , payload);
+            const { data } = await axios.post("api/subreddit/post/create" , payload);
             return data as string;
         },
     });

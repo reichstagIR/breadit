@@ -10,7 +10,7 @@ import axios from "axios";
 export default function useChangeName() {
     const result = useMutation({
         mutationFn: async (payload: userNameRequest) => {
-            const { data } = await axios.patch("/api/username" , payload);
+            const { data } = await axios.patch("api/username" , payload);
             return data as string;
         },
     });

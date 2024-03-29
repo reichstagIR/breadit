@@ -31,7 +31,7 @@ export default function useVoteComment(props: IUseCommentPostProps) {
     const result = useMutation({
         mutationFn: async (payload: commentVoteRequest) => {
             const { data } = await axios.patch(
-                "/api/subreddit/post/comment/vote",
+                "api/subreddit/post/comment/vote",
                 payload
             );
             return data as string;

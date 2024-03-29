@@ -10,7 +10,7 @@ import axios from "axios";
 export default function useUnsubscribeSubreddit() {
     const result = useMutation({
         mutationFn: async (payload: subscribeToSubredditPayload) => {
-            const { data } = await axios.post("/api/subreddit/unsubscribe", payload);
+            const { data } = await axios.post("api/subreddit/unsubscribe", payload);
             return data as string;
         },
     });

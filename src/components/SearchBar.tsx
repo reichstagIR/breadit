@@ -32,7 +32,7 @@ export default function SearchBar() {
 
     const { data, isFetched, refetch } = useQuery({
         queryFn: async () => {
-            const { data } = await axios.get(`/api/search?q=${input}`);
+            const { data } = await axios.get(`api/search?q=${input}`);
             return data as (Subreddits & {
                 _count: Prisma.SubredditsCountOutputType;
             })[];
