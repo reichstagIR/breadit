@@ -21,8 +21,6 @@ export default async function Page() {
                 <h1 className="text-3xl font-bold md:text-4xl">settings</h1>
             </div>
             <div className="grid gap-10">
-                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                {/* @ts-expect-error */}
                 <UserNameForm
                     user={{
                         id: session.user.id,
