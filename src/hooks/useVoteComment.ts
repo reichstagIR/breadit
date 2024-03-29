@@ -2,8 +2,8 @@
 
 // React Query
 import { useMutation } from "@tanstack/react-query";
-// Axios
-import axios from "axios";
+// API
+import API from "@/lib/API";
 // Zod
 import { commentVoteRequest } from "@/lib/validators/vote";
 // Prisma
@@ -30,7 +30,7 @@ export default function useVoteComment(props: IUseCommentPostProps) {
     const { setCurrentVote, setVoteAmt, prevVote, currentVote } = props;
     const result = useMutation({
         mutationFn: async (payload: commentVoteRequest) => {
-            const { data } = await axios.patch(
+            const { data } = await API.patch(
                 "api/subreddit/post/comment/vote",
                 payload
             );

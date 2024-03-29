@@ -4,13 +4,13 @@
 import { useMutation } from "@tanstack/react-query";
 // Zod
 import { userNameRequest } from "@/lib/validators/username";
-// axios
-import axios from "axios";
+// API
+import API from "@/lib/API";
 
 export default function useChangeName() {
     const result = useMutation({
         mutationFn: async (payload: userNameRequest) => {
-            const { data } = await axios.patch("api/username" , payload);
+            const { data } = await API.patch("api/username" , payload);
             return data as string;
         },
     });

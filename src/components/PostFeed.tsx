@@ -7,8 +7,8 @@ import { ExtendedPost } from "@/types/db";
 import { useIntersection } from "@mantine/hooks";
 // React Query
 import { useInfiniteQuery } from "@tanstack/react-query";
-// axios
-import axios from "axios";
+// lib
+import API from "@/lib/API";
 // React
 import { useRef } from "react";
 // Next Auth
@@ -41,7 +41,7 @@ export default function PostFeed({
                 `api/posts?limit=${INFINITE_SCROLLING_PAGINATION_RESULTS}&page=${pageParam}` +
                 (subredditName ? `$subredditName=${subredditName}` : "");
 
-            const { data } = await axios.get(query);
+            const { data } = await API.get(query);
             return data as ExtendedPost[];
         },
         {

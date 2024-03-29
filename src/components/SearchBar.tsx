@@ -11,8 +11,8 @@ import {
 } from "./ui/Command";
 // React Query
 import { useQuery } from "@tanstack/react-query";
-// Axios
-import axios from "axios";
+// API
+import API from "@/lib/API";
 // Prisma
 import { Prisma, Subreddits } from "@prisma/client";
 // React
@@ -32,7 +32,7 @@ export default function SearchBar() {
 
     const { data, isFetched, refetch } = useQuery({
         queryFn: async () => {
-            const { data } = await axios.get(`api/search?q=${input}`);
+            const { data } = await API.get(`api/search?q=${input}`);
             return data as (Subreddits & {
                 _count: Prisma.SubredditsCountOutputType;
             })[];
