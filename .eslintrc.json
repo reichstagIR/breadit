@@ -1,7 +1,20 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "eslint:recommended",
+    "next",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "rules": {
-    "no-console": ["warn"],
-    "no-unused-vars": ["warn"]
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-sort-props": "error",
+    "quotes": [2 , "double"],
+    "semi": [2 , "always"]
   }
 }
