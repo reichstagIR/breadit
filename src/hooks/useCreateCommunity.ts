@@ -10,7 +10,7 @@ import API from "@/lib/API";
 export default function useCreateCommunity() {
     const result = useMutation({
         mutationFn: async (payload: createSubredditPayload) => {
-            const { data } = await API.post("api/subreddit" , payload);
+            const { data } = await API.post("/api/subreddit" , payload);
             return data as string;
         },
     });

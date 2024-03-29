@@ -31,7 +31,7 @@ export default function useVotePost(props: IUseVotePostProps) {
     const result = useMutation({
         mutationFn: async (payload: postVoteRequest) => {
             const { data } = await API.patch(
-                "api/subreddit/post/vote",
+                "/api/subreddit/post/vote",
                 payload
             );
             return data as string;

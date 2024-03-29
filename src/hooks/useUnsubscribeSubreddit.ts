@@ -10,7 +10,7 @@ import API from "@/lib/API";
 export default function useUnsubscribeSubreddit() {
     const result = useMutation({
         mutationFn: async (payload: subscribeToSubredditPayload) => {
-            const { data } = await API.post("api/subreddit/unsubscribe", payload);
+            const { data } = await API.post("/api/subreddit/unsubscribe", payload);
             return data as string;
         },
     });

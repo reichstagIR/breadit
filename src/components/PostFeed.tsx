@@ -38,7 +38,7 @@ export default function PostFeed({
         ["infinite-query"],
         async ({ pageParam = 1 }) => {
             const query =
-                `api/posts?limit=${INFINITE_SCROLLING_PAGINATION_RESULTS}&page=${pageParam}` +
+                `/api/posts?limit=${INFINITE_SCROLLING_PAGINATION_RESULTS}&page=${pageParam}` +
                 (subredditName ? `$subredditName=${subredditName}` : "");
 
             const { data } = await API.get(query);
