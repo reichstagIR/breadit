@@ -31,7 +31,6 @@ const renderers = {
 export default function EditorOutput({ content }: IEditorOutputProps) {
     return (
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error
         <Output
             className="text-sm"
             data={content}
